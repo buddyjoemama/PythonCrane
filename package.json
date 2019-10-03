@@ -7,7 +7,17 @@
     "grunt": "^1.0.4",
     "grunt-init": "^0.3.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "angular": "^1.7.8",
+    "angular-deferred-bootstrap": "^0.1.9",
+    "angular-ui-bootstrap": "^2.5.6",
+    "bootstrap": "^4.3.1",
+    "grunt-contrib-cssmin": "^3.0.0",
+    "grunt-contrib-uglify": "^4.0.1",
+    "grunt-contrib-watch": "^1.1.0",
+    "lodash": "^4.17.15",
+    "ui-bootstrap4": "^3.0.6"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
