@@ -2,11 +2,13 @@ module.exports = function(grunt) {
 
     var config = {
         libs: ['node_modules/angular/angular.min.js',
-                'node_modules/ui-bootstrap4/dist/ui-bootstrap-tpls.js']
+                'node_modules/ui-bootstrap4/dist/ui-bootstrap-tpls.js'],
+        app: ['src/**/*.js']
     };
 
     var outFiles = {
-        'dist/js/crane.libs.js': ['<%=config.libs%>']
+        'dist/js/crane.libs.js': ['<%=config.libs%>'],
+        'dist/js/crane.app.js': ['<%=config.app%>']
     };
 
     grunt.initConfig({
