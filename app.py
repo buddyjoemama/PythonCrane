@@ -2,7 +2,7 @@ from flask import Flask, render_template
 import serial
 
 app = Flask(__name__)
-ser = serial.Serial('/dev/ttyACM0')
+#ser = serial.Serial('/dev/ttyACM0')
 
 @app.route('/')
 def index():
