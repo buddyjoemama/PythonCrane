@@ -1,8 +1,12 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory
 import serial
 
 app = Flask(__name__)
 ser = serial.Serial('/dev/ttyACM0')
+
+@app.route('/js/<path:path>')
+def get_js(path):
+    return send_from_directory('src', path)
 
 @app.route('/')
 def index():
