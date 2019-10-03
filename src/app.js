@@ -1,3 +1,3 @@
 (function() {
-    var app = angular.module('crane', ['ui.bootstrap']);
+    var app = angular.module('crane.app', ['ui.bootstrap']);
 })();
