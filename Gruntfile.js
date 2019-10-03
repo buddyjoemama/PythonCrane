@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     };
 
     var outFiles = {
-        'templates/dist/crane.libs.js': ['<%=config.libs%>']
+        'dist/js/crane.libs.js': ['<%=config.libs%>']
     };
 
     grunt.initConfig({

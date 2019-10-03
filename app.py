@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/js/<path:path>')
 def get_js(path):
-    return send_from_directory('src', path)
+    return send_from_directory('dist/js', path)
 
 @app.route('/')
 def index():
