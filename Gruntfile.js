@@ -7,8 +7,8 @@ module.exports = function(grunt) {
     };
 
     var outFiles = {
-        'dist/js/crane.libs.js': ['<%=config.libs%>'],
-        'dist/js/crane.app.js': ['<%=config.app%>']
+        'templates/js/crane.libs.js': ['<%=config.libs%>'],
+        'templates/js/crane.app.js': ['<%=config.app%>']
     };
 
     grunt.initConfig({
@@ -28,6 +28,5 @@ module.exports = function(grunt) {
   
     grunt.loadNpmTasks('grunt-contrib-uglify');
   
-    grunt.registerTask('default', ['uglify:default']);
-  
+    grunt.registerTask('default', ['uglify:default']);  
   };
