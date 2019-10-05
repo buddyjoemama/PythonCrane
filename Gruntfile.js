@@ -2,7 +2,8 @@ module.exports = function(grunt) {
 
     var config = {
         libs: ['node_modules/angular/angular.min.js',
-                'node_modules/ui-bootstrap4/dist/ui-bootstrap-tpls.js'],
+                'node_modules/ui-bootstrap4/dist/ui-bootstrap-tpls.js',
+                'node_modules/angular-route/angular-route.js'],
         app: ['src/**/*.js']
     };
 
@@ -23,10 +24,18 @@ module.exports = function(grunt) {
                 },
                 files: outFiles
             }
+        },
+
+        watch: {
+            default: {
+                files: ['<%=config.app%>'],
+                tasks: ['uglify:default']
+            }
         }
     });
   
     grunt.loadNpmTasks('grunt-contrib-uglify');
-  
+    grunt.loadNpmTasks('grunt-contrib-watch'); 
+
     grunt.registerTask('default', ['uglify:default']);  
   };

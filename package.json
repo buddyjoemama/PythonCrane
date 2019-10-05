@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "angular-route": "^1.7.8",
     "grunt": "^1.0.4",
     "grunt-init": "^0.3.2"
   },
