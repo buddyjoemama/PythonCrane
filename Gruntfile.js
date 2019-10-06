@@ -28,8 +28,10 @@ module.exports = function(grunt) {
 
         copy: {
             html: {
-                src: 'templates/*.html',
-                dest: '/Users/bbacon/www/'
+                src: 'templates/*',
+                dest: '/Users/bbacon/www/',
+                flatten: true,
+                expand: true
             }
         },
 
