@@ -16,7 +16,7 @@ def get_html(path):
 def index():
     return render_template('Index.html')
 
-@app.route('/control')
+@app.route('/py/control')
 def control():
     return None
 
