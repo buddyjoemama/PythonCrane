@@ -1,7 +1,7 @@
 (function() {
     var app = angular.module("crane.app", [ "ui.bootstrap", "ngRoute" ]).config(function($routeProvider) {
         $routeProvider.when("/", {
-            templateUrl: "cameraSelector.html",
+            templateUrl: "html/cameraSelector.html",
             controller: "cameraController as c"
         });
     });

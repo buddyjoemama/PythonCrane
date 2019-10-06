@@ -1,0 +1,88 @@
+<html>
+
+<body>
+    <style>
+        .controls {
+            display: flex;
+            flex: 1 1 auto;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        .controls button {
+            width: 60px;
+            height: 50px;
+        }
+
+        .platform-controls,
+        .rotation-controls,
+        .hook-controls,
+        .boom-controls {
+            width: auto;
+        }
+
+        .controls div {
+            padding: 5px;
+        }
+
+        .cab,
+        .hook,
+        .directions,
+        .boom {
+            text-align: center;
+            border: 1px solid black;
+        }
+    </style>
+    <content>
+        <div class="controls">
+            <div class="platform-controls">
+                <div class="directions">
+                    Platform
+                    <div class="north">
+                        <button>North</button>
+                    </div>
+                    <div class="east-west">
+                        <button>West</button>
+                        <button>East</button>
+                    </div>
+                    <div class="south">
+                        <button>South</button>
+                    </div>
+                </div>
+            </div>
+            <div class="rotation-controls">
+                <div class="cab">
+                    Cab
+                    <div class="east-west">
+                        <button>CW</button>
+                        <button>CCW</button>
+                    </div>
+                </div>
+            </div>
+            <div class="hook-controls">
+                <div class="hook">
+                    Hook
+                    <div>
+                        <button>Up</button>
+                    </div>
+                    <div>
+                        <button>Down</button>
+                    </div>
+                </div>
+            </div>
+            <div class="boom-controls">
+                <div class="boom">
+                    Boom
+                    <div>
+                        <button>Up</button>
+                    </div>
+                    <div>
+                        <button>Down</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </content>
+</body>
+
+</html>
