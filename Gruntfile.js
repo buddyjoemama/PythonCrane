@@ -8,8 +8,8 @@ module.exports = function(grunt) {
     };
 
     var outFiles = {
-        'templates/js/crane.libs.js': ['<%=config.libs%>'],
-        'templates/js/crane.app.js': ['<%=config.app%>']
+        '/Users/bbacon/www/js/crane.libs.js': ['<%=config.libs%>'],
+        '/Users/bbacon/www/js/crane.app.js': ['<%=config.app%>']
     };
 
     grunt.initConfig({
@@ -26,6 +26,13 @@ module.exports = function(grunt) {
             }
         },
 
+        copy: {
+            html: {
+                src: 'templates/*.html',
+                dest: '/Users/bbacon/www/'
+            }
+        },
+
         watch: {
             default: {
                 files: ['<%=config.app%>'],
@@ -36,6 +43,7 @@ module.exports = function(grunt) {
   
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch'); 
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
-    grunt.registerTask('default', ['uglify:default']);  
+    grunt.registerTask('default', ['uglify:default', 'copy:html']);  
   };
