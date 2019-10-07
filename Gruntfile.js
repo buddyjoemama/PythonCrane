@@ -76,7 +76,7 @@ module.exports = function(grunt) {
         watch: {
             default: {
                 files: ['<%=config.app%>'],
-                tasks: ['uglify:default']
+                tasks: ['uglify:default', 'copy:default']
             },
             mac: {
                 files: ['<%=config.app%>'],
@@ -93,7 +93,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch'); 
     grunt.loadNpmTasks('grunt-contrib-copy');
 
-    grunt.registerTask('default', ['uglify:default', 'copy:html-default']);  
+    grunt.registerTask('default', ['uglify:default', 'copy:default']);  
     grunt.registerTask('windows', ['uglify:windows', 'copy:html-windows']);
     grunt.registerTask('mac', ['uglify:mac', 'copy:html-mac']);
   };
