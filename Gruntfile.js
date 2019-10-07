@@ -13,6 +13,8 @@ module.exports = function(grunt) {
             '/mnt/c/inetpub/wwwroot/js/crane.app.js': ['<%=config.app%>']
         },
         raspi: {
+            '/home/pi/www/js/crane.libs.js': ['<%=config.libs%>'],
+            '/home/pi/www/js/crane.app.js': ['<%=config.app%>']
         },
         mac: {
             '/Users/bbacon/www/js/crane.libs.js': ['<%=config.libs%>'],
@@ -39,12 +41,23 @@ module.exports = function(grunt) {
                     compress: false
                 },
                 files: outFiles.windows
+            },
+            mac: {
+                options: {
+                    beautify: true,
+                    mangle: false,
+                    compress: false
+                },
+                files: outFiles.mac
             }
         },
 
         copy: {
             default: {
-
+                src: 'templates/*',
+                dest: '/home/pi/www/',
+                flatten: true,
+                expand: true
             },
             'html-mac': {
                 src: 'templates/*',
@@ -64,6 +77,10 @@ module.exports = function(grunt) {
             default: {
                 files: ['<%=config.app%>'],
                 tasks: ['uglify:default']
+            },
+            mac: {
+                files: ['<%=config.app%>'],
+                tasks: ['uglify:mac', 'copy:html-mac']
             },
             windows: {
                 files: ['<%=config.app%>'],
