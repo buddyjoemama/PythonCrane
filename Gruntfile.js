@@ -8,18 +8,8 @@ module.exports = function(grunt) {
     };
 
     var outFiles = {
-        windows: {
-            '/mnt/c/inetpub/wwwroot/js/crane.libs.js': ['<%=config.libs%>'],
-            '/mnt/c/inetpub/wwwroot/js/crane.app.js': ['<%=config.app%>']
-        },
-        raspi: {
-            '/home/pi/www/js/crane.libs.js': ['<%=config.libs%>'],
-            '/home/pi/www/js/crane.app.js': ['<%=config.app%>']
-        },
-        mac: {
-            '/Users/bbacon/www/js/crane.libs.js': ['<%=config.libs%>'],
-            '/Users/bbacon/www/js/crane.app.js': ['<%=config.app%>']
-        }
+        'templates/js/crane.libs.js': ['<%=config.libs%>'],
+        'templates/js/crane.app.js': ['<%=config.app%>']
     };
 
     grunt.initConfig({
@@ -32,7 +22,7 @@ module.exports = function(grunt) {
                     mangle: false,
                     compress: false
                 },
-                files: outFiles.raspi
+                files: outFiles
             },
             windows: {
                 options: {
@@ -40,7 +30,7 @@ module.exports = function(grunt) {
                     mangle: false,
                     compress: false
                 },
-                files: outFiles.windows
+                files: outFiles
             },
             mac: {
                 options: {
@@ -48,7 +38,7 @@ module.exports = function(grunt) {
                     mangle: false,
                     compress: false
                 },
-                files: outFiles.mac
+                files: outFiles
             }
         },
 
@@ -66,24 +56,23 @@ module.exports = function(grunt) {
                 expand: true
             },
             'html-windows': {
-                src: 'templates/*',
-                dest: '/mnt/c/inetpub/wwwroot',
-                flatten: true,
+                src: 'templates/**/*.*',
+                dest: '/mnt/c/inetpub/wwwroot/',
                 expand: true
             }
         },
 
         watch: {
             default: {
-                files: ['<%=config.app%>'],
+                files: ['<%=config.app%>', 'templates/**/*.html'],
                 tasks: ['uglify:default', 'copy:default']
             },
             mac: {
-                files: ['<%=config.app%>'],
+                files: ['<%=config.app%>', 'templates/**/*.html'],
                 tasks: ['uglify:mac', 'copy:html-mac']
             },
             windows: {
-                files: ['<%=config.app%>'],
+                files: ['<%=config.app%>', 'templates/**/*.html'],
                 tasks: ['uglify:windows', 'copy:html-windows']
             }
         }

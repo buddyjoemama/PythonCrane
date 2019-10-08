@@ -2,7 +2,7 @@
     var app = angular.module('crane.app', ['ui.bootstrap', 'ngRoute'])
         .config(function($routeProvider) {
             $routeProvider.when('/', {
-                templateUrl: 'html/cameraSelector.html',
+                templateUrl: 'cameraSelector.html',
                 controller: 'cameraController as c'
             });
         });
@@ -20,5 +20,5 @@
                 name: 'Overhead'
             }
         ]
-    });
-})();   
+    }); 
+})();    
