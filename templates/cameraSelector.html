@@ -22,13 +22,10 @@
 </style>
 <h1>Select View</h1>
 <div style="display: flex; flex: 1 1 auto; justify-content: space-around">
-    <div class="cam-selector" ng-repeat="cam in c.cameras">
+    <a class="cam-selector" ng-repeat="cam in c.cameras" ng-href="#!/crane">
         <span ng-bind="cam.name"></span>
         <div>
             <img ng-src="{{cam.url}}">
         </div>
-    </div>
+    </a>
 </div>
-<div>
- 
-</div>  

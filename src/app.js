@@ -6,11 +6,11 @@
                 controller: 'cameraController as c'
             })
             .when('/crane', {
-                templateUrl: 'crane.html',
+                templateUrl: 'views/crane.html',
                 controller: 'viewController as v'
             })
             .when('/overhead', {
-                templateUrl: 'overhead.html',
+                templateUrl: 'views/overhead.html',
                 controller: 'viewController as v'
             });
         });
@@ -42,4 +42,4 @@
 
 
     });
-})();    
+})();     
