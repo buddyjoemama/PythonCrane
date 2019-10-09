@@ -4,9 +4,24 @@
             $routeProvider.when('/', {
                 templateUrl: 'cameraSelector.html',
                 controller: 'cameraController as c'
+            })
+            .when('/crane', {
+                templateUrl: 'crane.html',
+                controller: 'viewController as v'
+            })
+            .when('/overhead', {
+                templateUrl: 'overhead.html',
+                controller: 'viewController as v'
             });
         });
     
+    app.component('craneControls', {
+        templateUrl: 'components/craneControls.html',
+        controller: function() {
+            
+        }
+    });
+
     app.controller('cameraController', function() {
         var self = this; 
         
@@ -20,5 +35,11 @@
                 name: 'Overhead'
             }
         ]
-    }); 
+    });
+
+    app.controller('viewController', function() {
+        var self = this;
+
+
+    });
 })();    
