@@ -44,9 +44,8 @@ module.exports = function(grunt) {
 
         copy: {
             default: {
-                src: 'templates/*',
+                src: 'templates/**/*.*',
                 dest: '/home/pi/www/',
-                flatten: true,
                 expand: true
             },
             'html-mac': {

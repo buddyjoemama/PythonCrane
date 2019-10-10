@@ -5,11 +5,11 @@
                 templateUrl: 'cameraSelector.html',
                 controller: 'cameraController as c'
             })
-            .when('/crane', {
+            .when('/Crane', {
                 templateUrl: 'views/crane.html',
                 controller: 'viewController as v'
             })
-            .when('/overhead', {
+            .when('/Overhead', {
                 templateUrl: 'views/overhead.html',
                 controller: 'viewController as v'
             });
@@ -17,7 +17,7 @@
     
     app.component('craneControls', {
         templateUrl: 'components/craneControls.html',
-        controller: function() {
+        controller: function() {p
             
         }
     });
@@ -27,11 +27,11 @@
         
         self.cameras = [
             {
-                url: 'http://192.168.86.24:8081/',
+                url: 'http://192.168.86.33:8081/',
                 name: 'Crane'
             }, 
             {
-                url: 'http://192.168.86.24:8082/',
+                url: 'http://192.168.86.33:8082/',
                 name: 'Overhead'
             }
         ]
