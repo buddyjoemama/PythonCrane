@@ -1,28 +1,6 @@
-<style>
-    h1 {
-        text-align: center;
-    }
-
-    .cam-selector {
-        cursor: pointer;
-        float: left;
-        text-align: center;
-        margin: 10px;
-        padding: 5px;
-        border: 1px solid black;
-    }
-
-    .cam-selector img {
-        width: 256px;
-    }
-
-    .cam-selector:hover {
-        border: 1px solid red;
-    }
-</style>
 <h1>Select View</h1>
 <div style="display: flex; flex: 1 1 auto; justify-content: space-around">
-    <a class="cam-selector" ng-repeat="cam in c.cameras" ng-href="#!/{{cam.name}}">
+    <a class="cam-selector" ng-repeat="cam in c.cameras" ng-href="#!/{{cam.route}}">
         <span ng-bind="cam.name"></span>
         <div>
             <img ng-src="{{cam.url}}">

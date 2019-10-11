@@ -1,24 +1,19 @@
 (function() {
-    var app = angular.module('crane.app', ['ui.bootstrap', 'ngRoute'])
+    var app = angular.module('crane.app', ['ui.bootstrap', 'ngRoute', 'templates-main'])
         .config(function($routeProvider) {
             $routeProvider.when('/', {
-                templateUrl: 'cameraSelector.html',
+                templateUrl: 'templates/cameraSelector.html',
                 controller: 'cameraController as c'
             })
             .when('/Crane', {
-                templateUrl: 'views/crane.html',
-                controller: 'viewController as v'
-            })
-            .when('/Overhead', {
-                templateUrl: 'views/overhead.html',
-                controller: 'viewController as v'
+                templateUrl: 'templates/cameraView.html'
             });
         });
     
     app.component('craneControls', {
-        templateUrl: 'components/craneControls.html',
-        controller: function() {p
-            
+        templateUrl: 'templates/components/craneControls.html',
+        controller: function() {
+             
         }
     });
 
@@ -28,18 +23,14 @@
         self.cameras = [
             {
                 url: 'http://192.168.86.33:8081/',
-                name: 'Crane'
+                name: 'Crane',
+                route: 'Crane'
             }, 
             {
                 url: 'http://192.168.86.33:8082/',
-                name: 'Overhead'
+                name: 'Overhead',
+                route: 'Crane'
             }
         ]
-    });
-
-    app.controller('viewController', function() {
-        var self = this;
-
-
     });
 })();     

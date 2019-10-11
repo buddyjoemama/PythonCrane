@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.cam-selector { 
+    cursor: pointer;
+    float: left;
+    text-align: center;
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.cam-selector img { 
+    width: 256px;
+}
+
+.cam-selector:hover {
+    border: 1px solid red;
+}
+
+.crane-main-view {
+    padding: 10px;
+}
+
+.cameras {
+    text-align: center;
+}
+
+.cameras span {
+    margin-left: 10;
+    margin-right: 10px;
+}

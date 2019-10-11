@@ -4,7 +4,7 @@ module.exports = function(grunt) {
         libs: ['node_modules/angular/angular.min.js',
                 'node_modules/ui-bootstrap4/dist/ui-bootstrap-tpls.js',
                 'node_modules/angular-route/angular-route.js'],
-        app: ['src/**/*.js']
+        app: ['templates/js/templates.js', 'src/**/*.js']
     };
 
     var outFiles = {
@@ -64,24 +64,44 @@ module.exports = function(grunt) {
         watch: {
             default: {
                 files: ['<%=config.app%>', 'templates/**/*.html'],
-                tasks: ['uglify:default', 'copy:default']
+                tasks: ['html2js:main', 'uglify:default', 'copy:default']
             },
             mac: {
                 files: ['<%=config.app%>', 'templates/**/*.html'],
-                tasks: ['uglify:mac', 'copy:html-mac']
+                tasks: ['html2js:main', 'uglify:mac', 'copy:html-mac']
             },
             windows: {
                 files: ['<%=config.app%>', 'templates/**/*.html'],
-                tasks: ['uglify:windows', 'copy:html-windows']
+                tasks: ['html2js:main', 'uglify:windows', 'copy:html-windows']
             }
-        }
+        },
+
+        html2js: {
+            options: {
+                base: '',
+                process: function (content, path) {
+                    var first = content.indexOf("<content>");
+                    var last = content.indexOf("</content>");
+
+                    if (first === null || first === -1)
+                        return content;
+
+                    return content.substring(first + "<content>".length, last);
+                }
+            },
+            main: { 
+                src: ['templates/**/*.html'],
+                dest: 'templates/js/templates.js'
+            }
+        },
     });
   
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch'); 
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-html2js');
 
-    grunt.registerTask('default', ['uglify:default', 'copy:default']);  
-    grunt.registerTask('windows', ['uglify:windows', 'copy:html-windows']);
-    grunt.registerTask('mac', ['uglify:mac', 'copy:html-mac']);
+    grunt.registerTask('default', ['html2js:main', 'uglify:default', 'copy:default']);  
+    grunt.registerTask('windows', ['html2js:main', 'uglify:windows', 'copy:html-windows']);
+    grunt.registerTask('mac', ['html2js:main', 'uglify:mac', 'copy:html-mac']);
   };

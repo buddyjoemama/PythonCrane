@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/main.css">
+    
+    <script src="js/crane.libs.js"></script>
+    <script src="js/crane.app.js"></script>
+</head>
+
+<body ng-app="crane.app">
+    <content>
+        <div class="crane-main-view">
+            <div class="cameras">
+                <span>
+                    <a href="/">Back</a>
+                </span>
+                <span>
+                    <a ng-href="#!/Crane">Crane View</a>
+                </span>
+                <span>
+                    <a ng-href="#!/Crane">Overhead View</a>
+                </span>
+            </div>
+            <div style="text-align: center;">
+                <img style="-webkit-user-select: none;margin: auto;" src="http://192.168.86.33:8081/">
+            </div>            
+            <crane-controls></crane-controls>
+        </div>
+    </content>
+</body>
+
+</html>
