@@ -19,6 +19,7 @@
     "grunt-contrib-uglify": "^4.0.1",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-html2js": "^0.6.0",
+    "lite-server": "^2.5.4",
     "lodash": "^4.17.15",
     "ui-bootstrap4": "^3.0.6"
   },
