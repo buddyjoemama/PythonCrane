@@ -1,11 +1,18 @@
-<!----p>home works!</p>
-<a routerLink="/view">View</a-->
 <div class="container">
   <div>
     <div>Camera 1</div>
-    <div class="video-stream">sdfdsfdf</div>
+    <div class="video-stream">
+      <a [routerLink]="['/view']" routerLinkActive="router-link-active">
+        <img src="//localhost/cam/1">
+      </a>
+    </div>
   </div>
   <div>
-    item 22
+    <div>Camera 2</div>
+    <div class="video-stream">
+      <a [routerLink]="['/view']" routerLinkActive="router-link-active" >
+          <img src="//localhost/cam/2">
+      </a>
+    </div>
   </div>
 </div>
