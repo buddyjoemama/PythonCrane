@@ -8,7 +8,7 @@ const routes: Routes = [
     path: '', component: HomeComponent
   },
   {
-    path: 'view', component: CameraViewComponent
+    path: 'view/:id', component: CameraViewComponent
   }
 ];
 
