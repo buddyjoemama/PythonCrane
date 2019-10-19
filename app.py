@@ -1,5 +1,6 @@
-from flask import Flask, render_template, send_from_directory
 import serial
+from flask import Flask, render_template, send_from_directory
+from controls import NorthChip, SouthChip
 
 app = Flask(__name__)
 #ser = serial.Serial('/dev/ttyACM0')
