@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ControlPanelComponent } from './control-panel/control-panel.component';
 import { HomeComponent } from './home/home.component';
 import { CameraViewComponent } from './camera-view/camera-view.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CameraViewComponent } from './camera-view/camera-view.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
