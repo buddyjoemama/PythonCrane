@@ -11,6 +11,8 @@ sController = SerialController.SerialController('/dev/ttyACM0')
 def control(nOp, sOp):
     north = NorthChip(nOp)
     south = SouthChip(sOp)    
+    
+    sController.write(1 << north, 1 << south)
     return Response("Ok", status=200)
 
 if __name__ == '__main__':
