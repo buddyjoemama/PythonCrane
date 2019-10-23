@@ -1,12 +1,12 @@
-from enum import Enum
+from enum import IntEnum
 
-class NorthChip(Enum):
+class NorthChip(IntEnum):
     CabCW = 0
     CabCCW = 1
     BoomUp = 2
     BoomDown = 3
 
-class SouthChip(Enum):
+class SouthChip(IntEnum):
     HookUp = 0
     HookDown = 1
     PlatformEast = 2
