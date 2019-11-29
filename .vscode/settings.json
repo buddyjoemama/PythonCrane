@@ -1,5 +1,6 @@
 {
-    "python.pythonPath": "cam/bin/python",
+    "python.pythonPath": "/Users/bbacon/Projects/PythonCrane/virtenv/bin/python2.7",
     "python.linting.pylintEnabled": true,
-    "python.linting.enabled": true
+    "python.linting.enabled": true,
+    "git.ignoreLimitWarning": true
 }
